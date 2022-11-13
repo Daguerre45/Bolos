@@ -18,6 +18,15 @@ class Test(unittest.TestCase):
         puntuacionSuma = puntuacionPrimerTiro + puntuacionSegundoTiro
         self.assertEqual(puntuacion(), puntuacionSuma)
     
-    
+    def test_puntuación_total_partida_nula(self):
+        partida = ([0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0])
+        suma_partida = sum(list(map(sum, partida)))
+        self.assertEqual(valorPartida(), suma_partida)
+        
+    def test_puntuación_total_partida_1(self):
+        partida = ([5,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0])
+        suma_partida = sum(list(map(sum, partida)))
+        self.assertEqual(valorPartida(), suma_partida)
+        
 if __name__ == "__main__":
     unittest.main()
